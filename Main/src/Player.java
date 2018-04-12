@@ -1,5 +1,6 @@
 package Main.src;
 
+
 public class Player {
 	
 	private int color;
@@ -13,17 +14,17 @@ public class Player {
 		
 	}
 
-	public List<Object> getMoveList(int draw) {
-		List<Object> moveList = new List();
+	public List<Move> getMoveList(Card draw) {
+		List<Move> moveList = new List();
 
 		switch (draw){
-			case 1:
-			case 2:
-			case 3:
-			case 4:
-			case 5:
-			case 8:
-			case 12: {
+			case ONE:
+			case TWO:
+			case THREE:
+			case FOUR:
+			case FIVE:
+			case EIGHT:
+			case TWELVE: {
 				for (Pawn thisPawn : pawnArray) {
 					moveList.push(thisPawn.testMove(draw));
 				}

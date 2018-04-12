@@ -1,9 +1,11 @@
 public class Pawn {
 	public Object currentNode; //FIX THIS FOR BETTER POINTER TO MAP LOCATION
 	public int distanceFromHome; //acts as relative progress check
-    public boolean isOut;
-	public boolean isSafe;
-	public int colorID;
+    public boolean isOut; //is out of home
+	public boolean isSafe; //is in the safety zone at least
+    public boolean isHome; //is home
+	public int colorID; //integer representing the color of the player
+
 	
 	Pawn(int color) {
 		this.colorID = color;
@@ -15,7 +17,7 @@ public class Pawn {
 		System.out.println("Pawn created, color = " + this.colorID);
 	}
 
-	public Object testMove(int steps, boolean is7) { //FIX THIS AS ABOVE
+	public Move testMove(int steps, boolean is7) { //FIX THIS AS ABOVE
 
 	    switch(steps) {
             case 1:
@@ -60,13 +62,7 @@ public class Pawn {
 
 	    return endNode;
     }
-
-    public int rateMove(int draw) {
-	    int rating = 0;
-
-	    if (locationID + draw)
-
-    }
 	
 	
 }
+
