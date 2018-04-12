@@ -1,3 +1,8 @@
+/**
+ * the card enum
+ * by alec
+ */
+
 package Main.src;
 
 
