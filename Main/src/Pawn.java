@@ -1,10 +1,12 @@
+package Main.src;
+
 public class Pawn {
 
 	private Block currentBlock; //FIX THIS FOR BETTER POINTER TO MAP LOCATION
 	private int distanceFromHome; //acts as relative progress check
     private boolean isOut; //is out of home
 	private boolean isSafe; //is in the safety zone at least
-    pprivate boolean isHome; //is home
+    private boolean isHome; //is home
 	private int colorID; //integer representing the color of the player
 
     public Block[] locationArray; //NEEDS TO BE UPDATED ONCE THE BOARD IS FINISHED
