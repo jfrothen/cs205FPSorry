@@ -1,4 +1,4 @@
-package main.src;
+package Main.src;
 
 /*
  Returns a move, containing fields used to rank relative quality of the move in various AI
