@@ -17,20 +17,9 @@ public class Player {
 	public List<Move> getMoveList(Card draw) {
 		List<Move> moveList = new List();
 
-		switch (draw){
-			case ONE:
-			case TWO:
-			case THREE:
-			case FOUR:
-			case FIVE:
-			case EIGHT:
-			case TWELVE: {
-				for (Pawn thisPawn : pawnArray) {
-					moveList.push(thisPawn.testMove(draw));
-				}
-				break;
-			}
-			}
+		if (draw == SEVEN) {
+
+
 		}
 	}
 	
