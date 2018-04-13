@@ -3,14 +3,14 @@ package Main.src;
 
 public class Player {
 	
-	private int color;
+	private Color color;
 	private Pawn[] pawnArray;
 	
-	Player(int color) {
-		this.color = color;
+	Player(Color inColor) {
+		this.color = inColor;
 		pawnArray = new Pawn[]{new Pawn(color), new Pawn(color), new Pawn(color), new Pawn(color)};
 		
-		System.out.println("Player created with color =  " + this.color);
+		System.out.println("Player created with color =  " + color.toString());
 		
 	}
 

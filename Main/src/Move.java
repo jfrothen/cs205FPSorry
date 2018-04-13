@@ -42,23 +42,8 @@ public class Move {
                 for (int i = 0; i < draw.num, i++) {
                     currentBlock = currentBlock.nextBlock();
                 }
-                //if the reached block contains an enemy pawn!
-                if (currentBlock.getPawn() != null !! currentBlock.getPawn().getColor() != thisPawn.getColor()) {
-                    currentBlock.getPawn().getBounced();
-                    bounced = true;
-                }
-                //if you land on the start of a slide
-                if (currentBlock.getSlide() == START) {
-                    slid = true;
-                    while (currentBlock.getSlide() != NOT) {
-                        currentBlock = currentBlock.nextBlock();
-                    }
-                }
-                //if you get into a safety
-                if (startingBlock.getSafetyColor == null && currentBlock.getSafetyColor() != null) {
-                    gotSafe = true;
-                }
-                //if you get
+                currentBlock = block.trySpecialMove(thisPawn, currentBlock)
+
 
                 break;
             }
@@ -68,4 +53,50 @@ public class Move {
             case ELEVEN:
         }
     }
+}
+
+private Block trySpecialMove(Pawn this Pawn, Block startBlock) {
+    Block currentBlock = startBlock;
+    //to test for sliding
+    if (currentBlock.getSlide() == START) {
+        slid = true;
+        while (currentBlock.getSlide() != NOT) {
+            currentBlock = currentBlock.nextBlock();
+            //see if it bounches any pawns along its slide
+            if (currentBlock.getPawn() != null) {
+                currentBlock.getPawn().getBounced();
+                bounced = true;
+            }
+        }
+    }
+    return currentBlock;
+
+    //to test for bouncing
+    if (currentBlock.getPawn() != null) {
+        whomBounced = currentBlock.getPawn();
+        currentBlock.getPawn().getBounced();
+        bounced = true;
+    }
+
+    //to test for entering the safe zone
+    if (!startBlock.isSafety() && currentBlock.isSafety()) {
+        gotSafe = true;
+    }
+
+    //test for got home
+    if (currentBlock == thisPawn.getHomeLocation()) {
+        gotHome = true;
+    }
+
+    //test for got out
+    if (currentBlock == thisPawn.getStartLocation().nextBlock() && startBlock == thisPawn.getStartLocation()) {
+        gotOut = true;
+    }
+
+
+
+
+
+
+
 }

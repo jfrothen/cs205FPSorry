@@ -7,20 +7,20 @@ public class Pawn {
     private boolean isOut; //is out of home
 	private boolean isSafe; //is in the safety zone at least
     private boolean isHome; //is home
-	private int colorID; //integer representing the color of the player
+	private Color color; //integer representing the color of the player
 
     public Block[] locationArray; //NEEDS TO BE UPDATED ONCE THE BOARD IS FINISHED
 
 	
-	Pawn(int color) {
-		this.colorID = color;
+	Pawn(Color color) {
+		this.color = color;
 		distanceFromHome = 0;
 		isOut = false;
 		//set currentNode equal to the correct node based on the color
 		isSafe = false;
 		//locationArray = {startBlock, startBlock, homeBlock}
 
-		System.out.println("Pawn created, color = " + this.colorID);
+		System.out.println("Pawn created, color = " + this.color.toString());
 	}
 
 	public int getColorID() {
@@ -49,6 +49,14 @@ public class Pawn {
     }
     public void setHome(boolean home) { //Slightly confusing name - sets the isHome field
         isHome = home;
+    }
+
+    public Block getHomeLocation() {
+	    return locationArray[2];
+    }
+
+    public Block getStartLocation() {
+	    return locationArray[1];
     }
 
     public boolean isOut() {
