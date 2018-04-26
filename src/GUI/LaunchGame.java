@@ -1,7 +1,10 @@
-package com.sorry.GUI;
+package GUI;
+
+import Logic.Game;
 
 import javax.swing.*;
 import java.awt.*;
+
 
 public class LaunchGame {
 
@@ -11,6 +14,10 @@ public class LaunchGame {
                 System.getProperty("user.dir"));
 
         GameWindow gameWindow= new GameWindow();
+        Game newGame = new Game();
+
+        newGame.playGame();
 
     }
 }
+

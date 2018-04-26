@@ -1,4 +1,4 @@
-package com.sorry.GUI;
+package GUI;
 
 import javax.swing.*;
 import java.awt.Color;
@@ -54,12 +54,5 @@ public class GameWindow extends JFrame{
 
             }
         });
-
-
     }
-
-
-
-
-
 }

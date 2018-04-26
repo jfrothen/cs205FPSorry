@@ -1,4 +1,4 @@
-package Main.src;
+package Logic;
 
 public class Testing {
 
