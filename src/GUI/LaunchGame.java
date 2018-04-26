@@ -1,11 +1,6 @@
 package GUI;
 
 import Logic.Game;
-
-import javax.swing.*;
-import java.awt.*;
-
-
 public class LaunchGame {
 
     public static void main(String[] args){
@@ -13,10 +8,14 @@ public class LaunchGame {
         System.out.println("Working Directory = " +
                 System.getProperty("user.dir"));
 
-        GameWindow gameWindow= new GameWindow();
-        Game newGame = new Game();
+//        StartWindow startWindow = StartWindow.getInstance();
+//        startWindow.setVisible(true);
+        GameWindow gw = GameWindow.getInstance();
+        gw.setVisible(true);
 
-        newGame.playGame();
+//        Game newGame = new Game();
+//
+//        newGame.playGame();
 
     }
 }
