@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Game {
     public Player currentPlayer;
+    public Player winner;
 
     public boolean whilePlaying;
 
@@ -12,6 +13,7 @@ public class Game {
     public ArrayList<Player> allPlayers;
 
     public void playGame() {
+        winner = null;
         Board gameBoard = new Board();
         ArrayList<Player> players = new ArrayList<>();
 
@@ -110,7 +112,12 @@ public class Game {
             currentPlayer = players.get(currentMove%(players.size()));
             whilePlaying = currentPlayer.play();
 
+
+            if (!whilePlaying) {
+                winner = currentPlayer;
+            }
             currentMove++;
+
 
 
         }
