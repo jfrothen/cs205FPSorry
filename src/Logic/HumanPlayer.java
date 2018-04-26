@@ -4,6 +4,16 @@ public class HumanPlayer extends Player {
     private String name;
     private Game thisGame;
 
+    public boolean hasDrawn() {
+        return drawn;
+    }
+
+    public void setDrawn(boolean drawn) {
+        this.drawn = drawn;
+    }
+
+    private boolean drawn;
+
     public HumanPlayer(String name, Color inColor, Board inBoard, Game thisGame) {
         super(inColor, inBoard);
         this.thisGame = thisGame;
@@ -13,15 +23,27 @@ public class HumanPlayer extends Player {
 
     @Override
     public boolean play() {
-        int choice = 0;
-        switch (choice) {
-            case 0:
-                thisGame.quitGame();
-                break;
-            case 1:
-                currentDraw = thisBoard.thisDeck.draw();
-                break;
+        drawn = false;
+        while(!drawn) {
+            System.out.println("Draw a card or quit.");
+        }
 
+        generateMoves();
+
+        boolean pawnSelected = false;
+
+        while(!pawnSelected) {
+            System.out.println("Select a pawn");
+        }
+        refreshHighlight();
+
+        boolean spaceSelected = false;
+
+        while (spaceSelected) {
+            System.out.println("Select a move");
+        }
+
+        for (Move m : potentialMovesList.get(0)) {
 
         }
 
@@ -39,5 +61,16 @@ public class HumanPlayer extends Player {
 
     public String getName() {
         return name;
+    }
+
+    public void draw() {
+        currentDraw = thisBoard.thisDeck.draw();
+        drawn = true;
+        refreshHighlight();
+    }
+
+    public void selectPawn(Pawn p) {
+        p.select();
+        refreshHighlight();
     }
 }

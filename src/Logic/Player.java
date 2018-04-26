@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Player {
-    protected Card currentDraw;
+
+    public Card currentDraw;
 
     protected int bounces;
     protected Color color;
@@ -255,6 +256,14 @@ public abstract class Player {
 
     public int getPawnsInStart() {
         return startPawnList.size();
+    }
+
+    public Card getCurrentDraw() {
+        return currentDraw;
+    }
+
+    public void setCurrentDraw(Card currentDraw) {
+        this.currentDraw = currentDraw;
     }
 
 
